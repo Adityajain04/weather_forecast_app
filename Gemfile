@@ -65,3 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'geocoder', '~> 1.8', '>= 1.8.5'
+gem 'httparty', '~> 0.23.1'
+gem 'redis', '~> 5.4'
