@@ -74,3 +74,14 @@ gem 'tailwindcss-rails', '~> 4.2', '>= 4.2.3'
 gem 'foreman', '~> 0.88.1'
 # Credentials
 gem 'dotenv'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'webmock'         # For mocking external HTTP requests
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+end
+
+group :test do
+  gem 'shoulda-matchers' # Optional: for one-liner tests of models/controllers
+end

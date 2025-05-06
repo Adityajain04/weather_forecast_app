@@ -32,16 +32,14 @@ class ForecastsController < ApplicationController
 
   # Manages forecast caching logic: fetch from cache or call weather API
   def cached_response(geo)
-    cache_key = "forecast:#{geo[:zip_code] || 'unknown'}"
+    cache_key = "forecast:#{(geo[:zip_code] || "unknown")}"
 
     if (cached = Rails.cache.read(cache_key))
       @weather = cached
       @from_cache = true
     else
-      # Fetch weather using latitude and longitude
       @weather = WeatherService.fetch(geo[:lat], geo[:lon])
-
-      if @weather[:error]
+      if @weather && !@weather[:error]
         Rails.cache.write(cache_key, @weather, expires_in: 30.minutes)
         @from_cache = false
       else
@@ -49,4 +47,5 @@ class ForecastsController < ApplicationController
       end
     end
   end
+
 end
