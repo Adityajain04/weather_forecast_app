@@ -84,4 +84,7 @@ end
 
 group :test do
   gem 'shoulda-matchers' # Optional: for one-liner tests of models/controllers
+  gem 'capybara'
+  gem 'selenium-webdriver'   # For full browser-based testing
+  gem 'webdrivers'           # Automatically downloads the browser driver
 end

@@ -1,6 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'webmock/rspec'
+require 'capybara/rspec'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -80,3 +81,7 @@ Shoulda::Matchers.configure do |config|
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
+
+# Optional: Configure Capybara server and driver
+Capybara.default_driver = :rack_test
+Capybara.javascript_driver = :selenium_chrome_headless
