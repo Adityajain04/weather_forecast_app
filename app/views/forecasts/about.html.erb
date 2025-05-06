@@ -1,0 +1,74 @@
+<h2 class="text-2xl font-bold mb-4">About the Weather Forecast App</h2>
+<div class="bg-blue-100 border border-blue-300 rounded-2xl shadow p-6 mb-10">
+  <p class="text-gray-700 mb-4">
+    This Weather Forecast App is a Ruby on Rails application that allows users to enter any address and view the current weather conditions. It leverages the OpenWeatherMap API to fetch live weather data based on geographic coordinates.
+  </p>
+
+  <h2 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">🔧 Features</h2>
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li>Geocoding address input to get latitude and longitude</li>
+    <li>Fetching current temperature, high/low, and weather conditions</li>
+    <li>Zip-code based caching with Redis for 30 minutes</li>
+    <li>Indication of whether data is from cache or fetched live</li>
+    <li>Responsive UI using Tailwind CSS</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">🧱 Architecture</h2>
+  <p class="text-gray-700 mb-2">
+    The app follows clean MVC principles and uses the following components:
+  </p>
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li><code>ForecastController</code> – Handles form input, caching logic, and response rendering</li>
+    <li><code>WeatherService</code> – A service object that interfaces with the OpenWeatherMap API</li>
+    <li><code>Redis Cache</code> – Stores forecast data per zip code for 30 minutes to reduce API calls</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">🧪 Testing</h2>
+  <p class="text-gray-700">
+    The app is tested with RSpec including:
+  </p>
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li>Unit tests for the WeatherService</li>
+    <li>Controller tests for forecast behavior</li>
+    <li>Cache testing with mocked data</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold text-gray-800 mt-6 mb-2">💡 Best Practices Followed</h2>
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li>Service objects for clean separation of concerns</li>
+    <li>Descriptive variable and method naming</li>
+    <li>Tailwind CSS for clean and responsive UI</li>
+    <li>Production-grade caching via Redis</li>
+    <li>Extensive code documentation and comments</li>
+  </ul>
+
+  <p class="mt-6 text-sm text-gray-500">Built with ❤️ by Aditya Jain</p>
+</div>
+
+<h2 class="text-2xl font-bold mb-4">About Me</h2>
+<div class="bg-blue-100 border border-blue-300 rounded-2xl shadow p-6 mb-10">
+  <p class="mb-4 text-lg">
+    Hello! I’m <strong>Aditya Jain</strong>, a passionate backend developer with extensive experience in Ruby on Rails.
+    I’ve worked on several high-impact projects involving scalable APIs, database optimization, image processing, and system design.
+  </p>
+
+  <p class="mb-4 text-lg">
+    My expertise includes:
+  </p>
+  <ul class="list-disc list-inside mb-4 text-lg">
+    <li>Ruby on Rails (5, 6 & 7)</li>
+    <li>PostgreSQL/MySql, Redis, Sidekiq</li>
+    <li>ActiveStorage and background processing</li>
+    <li>RSpec & Test-Driven Development</li>
+    <li>REST APIs & Graphql APIs Development</li>
+    <li>Leadership and customer handling</li>
+  </ul>
+
+  <p class="mb-4 text-lg">
+    I hold a degree in Electrical Engineering and enjoy working on backend systems that make a real difference.
+  </p>
+
+  <p class="text-lg">
+    Let’s build something amazing together!
+  </p>
+</div>
