@@ -72,3 +72,5 @@ gem 'redis', '~> 5.4'
 # Frontend library
 gem 'tailwindcss-rails', '~> 4.2', '>= 4.2.3'
 gem 'foreman', '~> 0.88.1'
+# Credentials
+gem 'dotenv'
