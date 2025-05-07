@@ -87,4 +87,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'   # For full browser-based testing
   gem 'webdrivers'           # Automatically downloads the browser driver
+  gem 'simplecov', require: false
 end
