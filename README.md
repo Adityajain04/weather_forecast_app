@@ -1,24 +1,83 @@
-# README
+# 🌤️ Weather Companion - Rails App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails web application that allows users to enter an address and retrieve the current weather forecast using the OpenWeatherMap API. Results are cached for 30 minutes by zip code to reduce redundant API calls and improve performance.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## 🔧 Features
 
-* System dependencies
+- Enter any address to get the weather forecast
+- Displays:
+  - Current temperature
+  - High and low temperature
+  - Weather description
+- Caches results for 30 minutes by zip code
+- Indicates whether the response was fetched from cache
+- Clean UI built with TailwindCSS
+- Fully tested with RSpec and Capybara
 
-* Configuration
+---
 
-* Database creation
+## 🚀 Tech Stack
 
-* Database initialization
+- Ruby on Rails 7
+- HTTParty (for API calls)
+- Geocoder (to convert addresses to lat/lon)
+- TailwindCSS
+- RSpec (unit and controller testing)
+- Capybara (system/integration testing)
+- SimpleCov (test coverage reporting)
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🧪 Running the App
 
-* Deployment instructions
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
+   cd weather-app
+   ```
 
-* ...
+2. **Install dependencies**
+    ```bash
+    bundle install
+    yarn install
+    ```
+
+3. **Set environment variables**
+
+    Create a .env file in the root directory and add your OpenWeather API key:
+    ```bash
+    OPENWEATHER_API_KEY=your_api_key_here
+    ```
+
+4. **Run the server**
+    ```bash
+    rails server
+    ```
+
+5. **Visit the app**
+    ```bash
+    http://localhost:3000
+    ```
+
+---
+
+## ✅ Testing
+
+**To run the test suite:**
+   ```bash
+   bundle exec rspec
+   ```
+
+**To view code coverage:**
+   ```bash
+   open coverage/index.html
+   ```
+
+---
+
+## 💡 Notes
+- Weather data is pulled from OpenWeatherMap
+- Ensure you use a valid API key; otherwise, API calls will fail
+- All responses are cached for 30 minutes using Rails cache mechanism
