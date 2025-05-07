@@ -14,7 +14,7 @@ class ForecastsController < ApplicationController
     redirect_to root_path, alert: geo[:error] and return if geo[:error]
 
     # Either get weather from cache or fetch fresh and cache it
-    cached_response(geo)
+    return if cached_response(geo) # return early if a redirect happened
 
     # Render the same index view with results
     render :index
@@ -39,13 +39,14 @@ class ForecastsController < ApplicationController
       @from_cache = true
     else
       @weather = WeatherService.fetch(geo[:lat], geo[:lon])
-      if @weather && !@weather[:error]
+      if @weather
         Rails.cache.write(cache_key, @weather, expires_in: 30.minutes)
         @from_cache = false
       else
-        redirect_to root_path, alert: "Could not retrieve forecast." and return
+        redirect_to root_path, alert: "Could not retrieve forecast." and return true
       end
     end
-  end
 
+    false # no redirect happened
+  end
 end
